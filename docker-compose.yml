@@ -1,0 +1,11 @@
+version: '3'
+services:
+  nlp:
+    # nlpディレクトリ内のDockerfileをもとにイメージをビルド
+    build: ./nlp
+    # ホストのポート5001とコンテナのポート5000を紐付け
+    ports:
+      - "5001:5000"
+    # コンテナ起動時にflaskコマンドを実行
+    command: flask run
+
